@@ -3,6 +3,6 @@ from . import views
 
 
 urlpatterns = [
-   path('', views.index, name='index'),
-   path('game/', views.game, name="game")
+   path('', views.index, name='dino-main'),
+   path('game/', views.game, name="dino-game")
 ]
