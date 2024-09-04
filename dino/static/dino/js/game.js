@@ -1551,9 +1551,6 @@
         this.jumpCount = 0;
         this.jumpspotX = 0;
 
-         // 새 이미지 로드
-        this.image = new Image();
-        this.image.src = '../image/new_character.png'; // 여기에 원하는 이미지 경로를 입력
 
         this.init();
     };

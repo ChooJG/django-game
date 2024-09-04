@@ -1,5 +1,6 @@
-<!doctype html>
-<html>
+{% extends 'base.html' %}
+
+{% block content %}
 
 <head>
     <meta charset="utf-8">
@@ -11,7 +12,8 @@
     <script src="{% static 'dino/js/game.js' %}"></script>
 </head>
 
-<body id="t" class="offline">
+<body id="t" class="offline" style="background-color: #E6E6FA; overflow: hidden">
+
     <div id="messageBox" class="sendmessage">
          <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">Press Space to start</h1>
          <div class="niokbutton" onclick="okbuttonsend()"></div>
@@ -45,3 +47,5 @@
 </script>
 
 </html>
+
+{% endblock %}
