@@ -72,3 +72,31 @@ form {
     border-radius: 5px;
     margin-bottom: 15px;
 }
+
+.move-right {
+    position: relative;
+    transition: transform 0.5s ease-out;
+    transform: translateX(400px);
+}
+
+.move-left {
+    position: relative;
+    transition: transform 0.5s ease-out;
+    transform: translateX(-400px);
+}
+
+.move-up {
+    position: relative;
+    transition: transform 0.5s ease-out;
+    transform: translateY(200px);
+}
+
+.move-down {
+    position: relative;
+    transition: transform 0.5s ease-out;
+    transform: translateY(-300px);
+}
+
+input {
+    transition: transform 0.5s ease-out;
+}

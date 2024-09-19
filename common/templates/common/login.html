@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <!-- CSS 파일 링크 추가 -->
-<link rel="stylesheet" href="{% static 'common/css/login.css' %}">
+<link rel="stylesheet" href="{% static 'common/css/login.css' %}?v={{ timestamp }}">
 
 <div class="container my-3">
     <h2>로그인</h2>
@@ -22,7 +22,7 @@
 </div>
 
 <!-- login.js 파일을 불러옴 -->
-<script src="{% static 'common/js/login.js' %}"></script>
+<script src="{% static 'common/js/login.js' %}?v={{ timestamp }}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // 폼 에러 메시지를 템플릿에서 가져옴
