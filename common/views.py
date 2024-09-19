@@ -24,3 +24,7 @@ def signup(request):
         form = UserForm()
     return render(request, 'common/signup.html', {'form': form})
 
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')
