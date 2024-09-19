@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from main import views
+
 
 urlpatterns = [
     path('main/', include('main.urls')),
+    path('common/', include('common.urls')),
     path('dino/', include('dino.urls')),
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'),  # '/' 에 해당되는 path
 ]

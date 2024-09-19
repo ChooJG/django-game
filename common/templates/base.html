@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}기본 제목{% endblock %}</title>
+    <title>{% block title %}피플에듀 게임세상{% endblock %}</title>
     <style>
         body {
             margin: 0;
@@ -20,6 +20,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px; /* 좌우 여백 추가 */
         }
         .navbar ul {
             list-style-type: none;
@@ -44,10 +45,15 @@
             display: flex;
             align-items: center;
         }
+        .auth-buttons span {
+            color: white;
+            margin-right: 20px; /* 오른쪽 여백 추가 */
+            font-weight: bold;  /* 폰트 굵기 추가 */
+        }
         .auth-buttons a {
             color: white;
             text-decoration: none;
-            padding: 10px 15px;
+            padding: 10px 15px 10px 15px;
             margin-left: 10px;
             border-radius: 5px;
         }
@@ -56,24 +62,43 @@
         }
         .login {
             background-color: #008CBA;
+            margin-right: 30px;
+        }
+        .mypage {
+            background-color: #f39c12; /* 마이페이지 버튼 색상 */
+
+        }
+        .logout {
+            background-color: #e74c3c; /* 로그아웃 버튼 색상 */
+            margin-right: 30px;
+        }
+        .auth-buttons a:hover {
+            opacity: 0.8; /* 마우스 오버 시 살짝 투명해짐 */
         }
         .content {
             margin-top: 60px; /* 네비게이션 바의 높이만큼 여백 추가 */
         }
+
     </style>
     {% block extra_css %}{% endblock %}
 </head>
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="{% url 'main' %}">홈</a></li>
+            <li><a href="{% url 'index' %}">홈</a></li>
             <li><a href="#counting-start">별찾기</a></li>
             <li><a href="{% url 'dino-game' %}">공룡런</a></li>
             <li><a href="#what">뭐하지</a></li>
         </ul>
         <div class="auth-buttons">
-            <a href="#" class="signup">회원가입</a>
-            <a href="#" class="login">로그인</a>
+            {% if request.user.is_authenticated %}
+                <span>{{ request.user.last_name }} 님 환영합니다!</span>
+                <a href="#" class="mypage">마이페이지</a>
+                <a href="#" class="logout">로그아웃</a>
+            {% else %}
+                <a href="{% url 'common:signup' %}" class="signup">회원가입</a>
+                <a href="{% url 'common:login' %}" class="login">로그인</a>
+            {% endif %}
         </div>
     </nav>
 
