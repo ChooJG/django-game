@@ -86,8 +86,8 @@
     <nav class="navbar">
         <ul>
             <li><a href="{% url 'index' %}">홈</a></li>
-            <li><a href="#counting-start">별찾기</a></li>
-            <li><a href="{% url 'dino-game' %}">공룡런</a></li>
+            <li><a href="{% url 'dino:main' 'counting-stars' %}">별찾기</a></li>
+            <li><a href="{% url 'dino:main' 'dino' %}">공룡런</a></li>
             <li><a href="#what">뭐하지</a></li>
         </ul>
         <div class="auth-buttons">

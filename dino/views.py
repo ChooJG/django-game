@@ -6,13 +6,9 @@ from datetime import datetime
 
 
 #dino 게임 메인화면으로 이동
-def index(request):
-    now = datetime.now()
-
-    context = {
-        'current_time' : now
-    }
-    return render(request, 'dino/index.html', context)
+def index(request, name):
+    # name 파라미터를 사용하여 로직 처리
+    return render(request, 'dino/index.html', {'name': name})
 
 
 #dino 게임화면으로 이동
